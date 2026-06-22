@@ -23,7 +23,7 @@ class Chunk(Base):
     created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(
         timezone.utc), nullable=False)
     document = relationship(
-        "Document", backup_populates="owner")
+        "Document", back_populates="owner")
     
 
     def __repr__(self) -> str:

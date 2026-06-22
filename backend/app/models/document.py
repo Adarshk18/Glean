@@ -22,7 +22,7 @@ class Document(Base):
     created_at = Column(DateTime(timezone=True), default=lambda: datetime.now(
         timezone.utc), nullable=False)
     owner = relationship(
-        "User", backup_populates="owner")
+        "User", back_populates="owner")
     chunks = relationship(
         "Chunk", back_populates="document", cascade="all, delete-orphan",
     )
